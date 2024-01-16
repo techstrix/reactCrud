@@ -2,9 +2,8 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Button, Table } from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
-
 function Read() {
-
+  
   const [apiData,setApiData] = useState([])
 const setData = (data) => {
   let {id,firstName,lastName} = data
@@ -13,6 +12,7 @@ const setData = (data) => {
   localStorage.setItem("lastName",lastName)
 }  
 useEffect(() => {
+
   axios.get("https://65a555d252f07a8b4a3ee087.mockapi.io/fakeCrudData")
   .then(response => {
     setApiData(response.data)

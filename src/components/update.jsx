@@ -12,6 +12,11 @@ function Update() {
   
   const updateAPIData = () => {
   //  return axios.put(`https://65a555d252f07a8b4a3ee087.mockapi.io/fakeCrudData/${ID}`,{firstName,lastName})
+
+  if(firstName === localStorage.getItem("firstName") && lastName === localStorage.getItem("lastName")){
+    navigate("/read")
+  }
+
     
     axios.put(`https://65a555d252f07a8b4a3ee087.mockapi.io/fakeCrudData/${ID}`,{firstName,lastName})
  navigate("/read")
